@@ -1,24 +1,31 @@
-class Game extends Phaser.State {
+/*global Phaser, _ */
+var DQ = DQ || {};
+(function () {
+    'use strict';
+    class Game extends Phaser.State {
 
-  constructor() {
-    super();
-  }
+        constructor() {
+            super();
+        }
 
-  create() {
-    var text = this.add.text(this.game.width * 0.5, this.game.height * 0.5, 'Game', {
-      font: '42px Arial', fill: '#ffffff', align: 'center'
-    });
-    text.anchor.set(0.5);
+        create() {
+            var text = this.add.text(this.game.width * 0.5, this.game.height * 0.5, 'Game', {
+                font: '42px Arial', fill: '#ffffff', align: 'center'
+            });
+            text.anchor.set(0.5);
 
-    this.input.onDown.add(this.endGame, this);
-  }
+            this.input.onDown.add(this.endGame, this);
+        }
 
-  update() {
+        update() {
 
-  }
+        }
 
-  endGame() {
-    this.game.state.start('gameover');
-  }
+        endGame() {
+            this.game.state.start('gameover');
+        }
 
-}
+    }
+
+    DQ.Game = Game;
+})();

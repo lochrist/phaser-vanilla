@@ -1,9 +1,11 @@
+/*global Phaser, _ */
+var DQ = DQ || {};
 const game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, 'PhaserGenerator-game');
 
-game.state.add('boot', new Boot());
-game.state.add('game', new Game());
-game.state.add('menu', new Menu());
-game.state.add('preloader', new Preloader());
-game.state.add('gameover', new Gameover());
+game.state.add('boot', new DQ.Boot());
+game.state.add('game', new DQ.Game());
+game.state.add('menu', new DQ.Menu());
+game.state.add('preloader', new DQ.Preloader());
+game.state.add('gameover', new DQ.Gameover());
 
 game.state.start('boot');
